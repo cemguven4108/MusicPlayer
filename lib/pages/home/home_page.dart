@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/pages/drawer/drawer_page.dart';
+import 'package:music_player/pages/home/home_body.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -23,8 +24,6 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    //final size = MediaQuery.of(context).size;
-
     return SafeArea(
       child: Scaffold(
         key: _key,
@@ -45,7 +44,10 @@ class _HomePageState extends State<HomePage>
           ],
         ),
         drawer: const DrawerPage(),
+        body: const HomeBody(),
       ),
     );
   }
+
+  
 }

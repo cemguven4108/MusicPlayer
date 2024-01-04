@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class DrawerHead extends StatelessWidget {
   const DrawerHead({
     super.key,
+    this.fullName,
+    this.image,
   });
+
+  final String? fullName;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +22,13 @@ class DrawerHead extends StatelessWidget {
           InkWell(
             onTap: () {},
             splashColor: Colors.transparent,
-            child: const CircleAvatar(
-              backgroundImage: AssetImage("assets/images/winXP.jpg"),
-              minRadius: 35,
-            ),
+            child: buildUserAvatar(size.width),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              "Cem Guven",
-              style: TextStyle(
+              fullName ?? "User",
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 19,
               ),
@@ -34,6 +36,19 @@ class DrawerHead extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildUserAvatar(double size) {
+    if (image == null) {
+      return Icon(
+        Icons.person,
+        size: size * 0.15,
+      );
+    }
+    return CircleAvatar(
+      backgroundImage: AssetImage(image!),
+      minRadius: 35,
     );
   }
 }

@@ -28,7 +28,6 @@ class _HomePageState extends State<HomePage>
     return SafeArea(
       child: Scaffold(
         key: _key,
-        backgroundColor: Colors.black87,
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => _key.currentState!.openDrawer(),

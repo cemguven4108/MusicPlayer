@@ -15,7 +15,10 @@ class DrawerPage extends StatelessWidget {
         width: size.width * 0.8,
         child: const Column(
           children: <Widget>[
-            DrawerHead(),
+            DrawerHead(
+              fullName: "Cem Guven",
+              image: "assets/images/winXP.jpg",
+            ),
             DrawerBody(),
           ],
         ),

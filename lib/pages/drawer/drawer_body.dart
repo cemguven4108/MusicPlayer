@@ -27,6 +27,8 @@ class DrawerBody extends StatelessWidget {
                   ),
                   title: Text(
                     DrawerItem.values[index].toString(),
+                    overflow: TextOverflow.fade,
+                    maxLines: 1,
                     style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 17,

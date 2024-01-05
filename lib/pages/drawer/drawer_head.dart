@@ -19,18 +19,26 @@ class DrawerHead extends StatelessWidget {
       height: size.height * 0.25,
       child: Row(
         children: <Widget>[
-          InkWell(
-            onTap: () {},
-            splashColor: Colors.transparent,
-            child: buildUserAvatar(size.width),
+          Flexible(
+            child: InkWell(
+              onTap: () {},
+              splashColor: Colors.transparent,
+              child: buildUserAvatar(size.width),
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              fullName ?? "User",
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 19,
+          Flexible(
+            fit: FlexFit.loose,
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                fullName ?? "User",
+                overflow: TextOverflow.fade,
+                maxLines: 1,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 19,
+                ),
               ),
             ),
           ),
@@ -41,9 +49,8 @@ class DrawerHead extends StatelessWidget {
 
   Widget buildUserAvatar(double size) {
     if (image == null) {
-      return Icon(
+      return const Icon(
         Icons.person,
-        size: size * 0.15,
       );
     }
     return CircleAvatar(

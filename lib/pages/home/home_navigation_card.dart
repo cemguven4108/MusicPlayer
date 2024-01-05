@@ -17,23 +17,25 @@ class HomeNavigationCard extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      width: size.width * 0.3,
+      padding: const EdgeInsets.all(12),
+      width: size.width * 0.28,
       height: size.width * 0.18,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: color,
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Flexible(
+            child: Icon(
               icon,
               color: Colors.white,
             ),
-            Text(
+          ),
+          Flexible(
+            child: Text(
               title,
               overflow: TextOverflow.fade,
               maxLines: 1,
@@ -41,8 +43,8 @@ class HomeNavigationCard extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

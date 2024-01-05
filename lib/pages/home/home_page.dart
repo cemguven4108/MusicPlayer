@@ -14,12 +14,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-  late TabController controller;
+  late TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 4, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -44,10 +44,9 @@ class _HomePageState extends State<HomePage>
           ],
         ),
         drawer: const DrawerPage(),
-        body: const HomeBody(),
+        body: HomeBody(
+        ),
       ),
     );
   }
-
-  
 }

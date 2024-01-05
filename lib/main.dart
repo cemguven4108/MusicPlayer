@@ -27,10 +27,10 @@ void main() {
           ),
         ),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(useMaterial3: true),
-        home: const HomePage(),
+        themeMode: ThemeMode.system,
+        home: HomePage(),
       ),
     ),
   );

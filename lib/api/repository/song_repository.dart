@@ -18,6 +18,10 @@ class SongRepository {
   }
 
   Future<List<SongModel>> getAllSongs() {
-    return Future(() => []);
+    return Future(() => [
+      SongModel(name: "This is my life"),
+      SongModel(name: "Halo"),
+      SongModel(name: "7/11"),
+    ]);
   }
 }

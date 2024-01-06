@@ -3,6 +3,7 @@ import 'package:music_player/core/widgets/custom_tab_bar.dart';
 import 'package:music_player/models/enums/navigation_card_item.dart';
 import 'package:music_player/models/enums/tab_bar_item.dart';
 import 'package:music_player/pages/home/home_navigation_card.dart';
+import 'package:music_player/pages/home/songs_view/song_list.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -70,17 +71,7 @@ class HomeBody extends StatelessWidget {
       aspectRatio: 1 / 2,
       child: TabBarView(
         children: [
-          ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                height: 100,
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(10),
-                color: Colors.red,
-              );
-            },
-          ),
+          const SongList(),
           Container(),
           Container(),
           Container(),

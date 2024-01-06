@@ -44,8 +44,7 @@ class _HomePageState extends State<HomePage>
           ],
         ),
         drawer: const DrawerPage(),
-        body: HomeBody(
-        ),
+        body: const HomeBody(),
       ),
     );
   }

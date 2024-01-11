@@ -71,7 +71,9 @@ class HomeBody extends StatelessWidget {
       aspectRatio: 1 / 2,
       child: TabBarView(
         children: [
-          const SongList(),
+          const SongList(
+            songModels: [],
+          ),
           Container(),
           Container(),
           Container(),
